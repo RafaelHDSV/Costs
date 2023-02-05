@@ -14,12 +14,14 @@ function App() {
           <Link to='/contact'>Contact</Link>
           <Link to='/newproject'>NewProject</Link>
         </div>
+
         <Routes>
           <Route exact path='/' element={<Home />} />
           <Route path='/company' element={<Company />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/newproject' element={<NewProject />} />
         </Routes>
+
         <p>Footer</p>
       </Router>
     </div>
