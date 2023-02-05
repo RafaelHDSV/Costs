@@ -2,5 +2,10 @@
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
+    flex-wrap: wrap;
     max-width: 1200px;
+}
+
+.min-height {
+    min-height: 75%;
 }

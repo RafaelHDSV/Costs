@@ -1,9 +1,9 @@
 import React from 'react'
-import styles from './Container.css'
+import stylesContainer from './Container.module.css'
 
 function Container(props) {
     return (
-        <div className={styles.container}>
+        <div className={`${stylesContainer.container} ${stylesContainer[props.customClass]}`}>
             {props.children}
         </div>
     )
