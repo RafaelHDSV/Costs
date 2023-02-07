@@ -8,17 +8,14 @@ import logo from '../../images/costs_logo.png'
 
 const Navbar = () => {
     return (
-        <nav>
-            <Container>
-                <Link to='/'><img src={logo} alt='costs_logo.png' /></Link>
+        <nav className={styles.nav}>
+            <Link to='/'><img src={logo} alt='costs_logo.png' /></Link>
 
-                <ul>
-                    <li><Link to='/'>Home</Link></li>
-                    <li><Link to='/company'>Company</Link></li>
-                    <li><Link to='/contact'>Contact</Link></li>
-                    <li><Link to='/newproject'>NewProject</Link></li>
-                </ul>
-            </Container>
+            <ul className={styles.list}>
+                <li className={styles.item}><Link to='/'>Home</Link></li>
+                <li className={styles.item}><Link to='/company'>Company</Link></li>
+                <li className={styles.item}><Link to='/contact'>Contact</Link></li>
+            </ul>
         </nav>
     )
 }
