@@ -11,10 +11,13 @@ const Navbar = () => {
         <nav>
             <Container>
                 <Link to='/'><img src={logo} alt='costs_logo.png' /></Link>
-                <Link to='/'>Home</Link>
-                <Link to='/company'>Company</Link>
-                <Link to='/contact'>Contact</Link>
-                <Link to='/newproject'>NewProject</Link>
+
+                <ul>
+                    <li><Link to='/'>Home</Link></li>
+                    <li><Link to='/company'>Company</Link></li>
+                    <li><Link to='/contact'>Contact</Link></li>
+                    <li><Link to='/newproject'>NewProject</Link></li>
+                </ul>
             </Container>
         </nav>
     )
