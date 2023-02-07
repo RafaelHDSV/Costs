@@ -7,7 +7,7 @@ const ProjectForm = () => {
     return (
         <form className={styles.form}>
             <Input type='text' text='Nome do Projeto' name='name' placeholder='Insira o nome do Projeto'></Input>
-            <input type="number" placeholder='Insira o orçamento total' />
+            <Input type='number' text='Orçamento do projeto' name='budget' placeholder='Insira o orçamento total'></Input>
 
             <select name="category_id">
                 <option disabled selected>Selecione a categoria</option>
