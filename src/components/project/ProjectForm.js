@@ -44,10 +44,10 @@ const ProjectForm = ({ handleSubmit, btnText, projectData }) => {
 
     return (
         <form onSubmit={submit} className={styles.form}>
-            <Input type='text' text='Nome do Projeto' name='name' placeholder='Insira o nome do Projeto' handleOnChange={handleChange}></Input>
-            <Input type='number' text='Orçamento do projeto' name='budget' placeholder='Insira o orçamento total' handleOnChange={handleChange}></Input>
+            <Input type='text' text='Nome do Projeto' name='name' placeholder='Insira o nome do Projeto' handleOnChange={handleChange} value={project.name ? project.name : ''}></Input>
+            <Input type='number' text='Orçamento do projeto' name='budget' placeholder='Insira o orçamento total' handleOnChange={handleChange} value={project.budget ? project.budget : ''}></Input>
 
-            <Select name='category_id' text='Selecione a categoria' options={categories}></Select>
+            <Select name='category_id' text='Selecione a categoria' options={categories} handleOnChange={handleCategory} value={project.category ? project.category.id : ''}></Select>
 
             <SubmitButton text={btnText}></SubmitButton>
         </form>
