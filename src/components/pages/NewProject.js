@@ -21,7 +21,7 @@ const NewProject = () => {
             body: JSON.stringify(project)
         }).then((resp) => resp.json())
             .then((data) => {
-                history('/projects', { message: 'Projeto criado com sucesso!' })
+                history('/projects', { state: { message: 'Projeto criado com sucesso!' } })
             })
             .catch((err) => console.log(err))
     }
