@@ -16,6 +16,8 @@ const Message = ({ type, msg }) => {
         const timer = setTimeout(() => {
             setVisible(false)
         }, 3000)
+
+        return () => clearTimeout(timer)
     }, [msg])
 
     return (
