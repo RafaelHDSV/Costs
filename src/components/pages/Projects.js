@@ -16,12 +16,14 @@ const Projects = () => {
     }
 
     return (
-        <div>
-            <div>
+        <div className={styles.project_container}>
+            <div className={styles.title_container}>
                 <h1>Meus projetos</h1>
                 <LinkButton to='/newproject' text='Criar Projeto'></LinkButton >
             </div>
+
             {message && <Message type='sucess' msg={message}></Message>}
+
             <Container customClass='start'>
                 <p>Projetos...</p>
             </Container>
