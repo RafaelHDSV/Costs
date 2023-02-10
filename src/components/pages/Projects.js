@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import Message from '../layout/Message'
 import Container from '../layout/Container'
 import LinkButton from '../layout/LinkButton'
+import ProjectCard from '../project/ProjectCard'
 
 import styles from './Projects.module.css'
 
 const Projects = () => {
+
+    const [projects, setProjects] = useState([])
 
     const location = useLocation()
     let message = ''
@@ -14,6 +17,19 @@ const Projects = () => {
     if (location.state) {
         message = location.state.message
     }
+
+    useEffect(() => {
+        fetch('http://localhost:5000/projects', {
+            method: 'GET',
+            haders: {
+                'Content-type': 'application/json'
+            },
+        }).then((resp) => resp.json())
+            .then(data => {
+
+            })
+            .catch(err => console.log(err))
+    }, [])
 
     return (
         <div className={styles.project_container}>
