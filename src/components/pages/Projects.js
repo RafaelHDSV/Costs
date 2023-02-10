@@ -25,10 +25,10 @@ const Projects = () => {
                 'Content-type': 'application/json'
             },
         }).then((resp) => resp.json())
-            .then(data => {
-
+            .then((data) => {
+                setProjects(data)
             })
-            .catch(err => console.log(err))
+            .catch((err) => console.log(err))
     }, [])
 
     return (
