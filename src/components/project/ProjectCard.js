@@ -5,7 +5,7 @@ import styles from './ProjectCard.module.css'
 
 const ProjectCard = ({ id, name, budget, category, handleRemove }) => {
     return (
-        <div>ProjectCard</div>
+        <p>{name}</p>
     )
 }
 

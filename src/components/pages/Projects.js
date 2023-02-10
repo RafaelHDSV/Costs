@@ -41,7 +41,11 @@ const Projects = () => {
             {message && <Message type='sucess' msg={message}></Message>}
 
             <Container customClass='start'>
-                <p>Projetos...</p>
+                {projects.length > 0 && (
+                    projects.map((project) => (
+                        <ProjectCard id={project.id} name={project.name} budget={project.budget} category={project.category.name} key={project.id}></ProjectCard>
+                    ))
+                )}
             </Container>
         </div>
     )
