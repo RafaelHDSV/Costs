@@ -12,6 +12,7 @@ const Project = () => {
     const { id } = useParams()
     const [project, setProject] = useState([])
     const [showProjectForm, setShowProjectForm] = useState(false)
+    const [showServiceForm, setShowServiceForm] = useState(false)
     const [message, setMessage] = useState()
     const [type, setType] = useState()
 
@@ -58,6 +59,10 @@ const Project = () => {
         setShowProjectForm(!showProjectForm)
     }
 
+    function toggleServiceForm() {
+        setShowServiceForm(!showServiceForm)
+    }
+
     return (
         <>
             {project.name ? (
@@ -78,6 +83,11 @@ const Project = () => {
                                     <ProjectForm handleSubmit={editPost} btnText='Concluir Edição' projectData={project}></ProjectForm>
                                 </div>
                             )}
+                        </div>
+
+                        <div className={styles.service_form_container}>
+                            <h2>Adicione um serviço:</h2>
+                            <button className={styles.btn} onClick={toggleServiceForm}>{!showServiceForm ? 'Adicionar serviço' : 'Fechar'}</button>
                         </div>
                     </Container>
                 </div>
