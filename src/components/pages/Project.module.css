@@ -17,6 +17,7 @@
     background-color: #222;
     color: #ffbb33;
     padding: .5rem;
+    margin-bottom: 1rem;
 }
 
 .project_details span {
@@ -35,12 +36,15 @@
 }
 
 .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
     background-color: #222;
     color: #fff;
     border-radius: 1rem;
     padding: 1rem 2rem;
-    max-height: 40px;
+    max-height: 3rem;
     border: none;
     cursor: pointer;
     transition: .5s all ease;
@@ -50,6 +54,6 @@
     color: #ffbb33;
 }
 
-.form {
+.project_info {
     width: 100%;
 }
