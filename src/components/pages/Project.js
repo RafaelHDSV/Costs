@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import Container from '../layout/Container'
 import Loading from '../layout/Loading'
 import ProjectForm from '../project/ProjectForm'
+import Message from '../layout/Message'
 
 import styles from './Project.module.css'
 
@@ -11,6 +12,8 @@ const Project = () => {
     const { id } = useParams()
     const [project, setProject] = useState([])
     const [showProjectForm, setShowProjectForm] = useState(false)
+    const [message, setMessage] = useState()
+    const [type, setType] = useState()
 
     useEffect(() => {
         setTimeout(() => {
@@ -29,7 +32,9 @@ const Project = () => {
 
     function editPost(project) {
         if (project.budget < project.cost) {
-            // message
+            setMessage('O orçamento não pode ser menos que o custo do projeto!')
+            setType('error')
+            return false
         }
 
         fetch(`http://localhost:5000/projects/${project.id}`, {
@@ -42,7 +47,8 @@ const Project = () => {
             .then((data) => {
                 setProject(data)
                 setShowProjectForm(false)
-                // message
+                setMessage('Projeto atualizado!')
+                setType('sucess')
             }).catch((err) => console.log(err))
     }
 
@@ -55,6 +61,7 @@ const Project = () => {
             {project.name ? (
                 <div className={styles.project_details}>
                     <Container customClass='column'>
+                        {message && <Message type={type} msg={message} />}
                         <div className={styles.details_container}>
                             <h1>Projeto: {project.name}</h1>
                             <button className={styles.btn} onClick={toggleProjectForm}>{!showProjectForm ? 'Editar Projeto' : 'Fechar'}</button>
