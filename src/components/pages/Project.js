@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { parse, v4 as uuidv4 } from 'uuid'
+import { v4 as uuidv4 } from 'uuid'
 import { useParams } from 'react-router-dom'
 import Container from '../layout/Container'
 import Loading from '../layout/Loading'
