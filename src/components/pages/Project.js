@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Container from '../layout/Container'
 import Loading from '../layout/Loading'
+import ProjectForm from '../project/ProjectForm'
 
 import styles from './Project.module.css'
 
@@ -46,7 +47,7 @@ const Project = () => {
                                 </div>
                             ) : (
                                 <div className={styles.project_info}>
-                                    <p>detalhe projeto</p>
+                                    <ProjectForm></ProjectForm>
                                 </div>
                             )}
                         </div>
