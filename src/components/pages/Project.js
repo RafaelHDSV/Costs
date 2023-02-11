@@ -33,11 +33,11 @@ const Project = () => {
     return (
         <>
             {project.name ? (
-                <div>
+                <div className={styles.project_details}>
                     <Container customClass='column'>
-                        <div>
+                        <div className={styles.details_container}>
                             <h1>Projeto: {project.name}</h1>
-                            <button onClick={toggleProjectForm}>{!showProjectForm ? 'Editar Projeto' : 'Fechar'}</button>
+                            <button className={styles.btn} onClick={toggleProjectForm}>{!showProjectForm ? 'Editar Projeto' : 'Fechar'}</button>
                             {!showProjectForm ? (
                                 <div>
                                     <p><span>Categoria:</span>{project.category.name}</p>
