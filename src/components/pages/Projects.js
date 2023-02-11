@@ -36,6 +36,20 @@ const Projects = () => {
         }, 300)
     }, [])
 
+    function removeProject(id) {
+        fetch(`http://localhost:5000/projects/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-type': 'application/json'
+            },
+        }).then((resp) => resp.json())
+            .then((data) => {
+                setProjects(projects.filter((project) => project.id !== id))
+                //message
+            })
+            .catch((err) => console.log(err))
+    }
+
     return (
         <div className={styles.project_container}>
             <div className={styles.title_container}>
@@ -48,7 +62,7 @@ const Projects = () => {
             <Container customClass='start'>
                 {projects.length > 0 && (
                     projects.map((project) => (
-                        <ProjectCard id={project.id} name={project.name} budget={project.budget} category={project.category.name} key={project.id}></ProjectCard>
+                        <ProjectCard id={project.id} name={project.name} budget={project.budget} category={project.category.name} key={project.id} handleRemove={removeProject}></ProjectCard>
                     ))
                 )}
                 {!removeLoading && <Loading></Loading>}

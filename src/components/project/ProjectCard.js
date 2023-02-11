@@ -5,6 +5,12 @@ import { BsPencil, BsFillTrashFill } from 'react-icons/bs'
 import styles from './ProjectCard.module.css'
 
 const ProjectCard = ({ id, name, budget, category, handleRemove }) => {
+
+    const remove = (e) => {
+        e.preventDefault()
+        handleRemove(id)
+    }
+
     return (
         <div className={styles.project_card}>
             <h4>{name}</h4>
@@ -13,7 +19,7 @@ const ProjectCard = ({ id, name, budget, category, handleRemove }) => {
 
             <div className={styles.project_card_actions}>
                 <Link to='/'><BsPencil></BsPencil>Editar</Link>
-                <button><BsFillTrashFill></BsFillTrashFill>Excluir</button>
+                <button onClick={remove}><BsFillTrashFill></BsFillTrashFill>Excluir</button>
             </div>
         </div>
     )
