@@ -11,7 +11,6 @@ import ServiceCard from '../services/ServiceCard'
 import styles from './Project.module.css'
 
 const Project = () => {
-
     const { id } = useParams()
     const [project, setProject] = useState([])
     const [services, setServices] = useState([])
