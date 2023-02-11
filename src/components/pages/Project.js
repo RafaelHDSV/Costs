@@ -27,6 +27,10 @@ const Project = () => {
         }, 300);
     }, [id])
 
+    function editPost(project) {
+
+    }
+
     function toggleProjectForm() {
         setShowProjectForm(!showProjectForm)
     }
@@ -47,7 +51,7 @@ const Project = () => {
                                 </div>
                             ) : (
                                 <div className={styles.project_info}>
-                                    <ProjectForm></ProjectForm>
+                                    <ProjectForm handleSubmit={editPost} btnText='Concluir Edição' projectData={project}></ProjectForm>
                                 </div>
                             )}
                         </div>
