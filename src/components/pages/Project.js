@@ -4,6 +4,7 @@ import Container from '../layout/Container'
 import Loading from '../layout/Loading'
 import ProjectForm from '../project/ProjectForm'
 import Message from '../layout/Message'
+import ServiceForm from '../services/ServiceForm'
 
 import styles from './Project.module.css'
 
@@ -91,7 +92,7 @@ const Project = () => {
 
                             <div className={styles.project_info}>
                                 {showServiceForm && (
-                                    <div>form</div>
+                                    <ServiceForm></ServiceForm>
                                 )}
                             </div>
                         </div>
