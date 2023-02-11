@@ -31,6 +31,8 @@ const Project = () => {
     }, [id])
 
     function editPost(project) {
+        setMessage('')
+
         if (project.budget < project.cost) {
             setMessage('O orçamento não pode ser menos que o custo do projeto!')
             setType('error')
