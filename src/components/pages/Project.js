@@ -32,7 +32,7 @@ const Project = () => {
             // message
         }
 
-        fetch(`http://localhost:5000/project/${project.id}`, {
+        fetch(`http://localhost:5000/projects/${project.id}`, {
             method: 'PATCH',
             headers: {
                 'Content-type': 'application/json'
@@ -40,7 +40,9 @@ const Project = () => {
             body: JSON.stringify(project),
         }).then((resp) => resp.json())
             .then((data) => {
-
+                setProject(data)
+                setShowProjectForm(false)
+                // message
             }).catch((err) => console.log(err))
     }
 
