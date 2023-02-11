@@ -4,7 +4,7 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/RafaelHDSV/Costs?style=for-the-badge)
 ![GitHub forks](https://img.shields.io/github/forks/RafaelHDSV/Costs?style=for-the-badge)
 
-<img src="images/desktop.png" alt="desktop.png">
+<img src="public/main.png" alt="main.png">
 
 > Costs is a site for project planning and execution, more focused on the financial part. That is, you can create several projects and see the cost of each one and the available value of it, among other features...
 
@@ -30,17 +30,25 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: URL SITE HERE
+- Live Site URL: https://costs-rafael.netlify.app
 
 ### Screenshot
 
   - Main
   
-    ![](images/desktop.png)
+    ![](public/main.png)
     
-  - Mobile
+  - Create Project
     
-     ![](images/desktop.png)
+     ![](public/create_project.png)
+    
+  - Projects
+    
+     ![](public/projects.png)
+    
+  - Edit Project
+    
+     ![](public/edit_project.png)
 
 ## My process
 
