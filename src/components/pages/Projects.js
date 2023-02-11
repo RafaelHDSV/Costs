@@ -21,16 +21,19 @@ const Projects = () => {
     }
 
     useEffect(() => {
-        fetch('http://localhost:5000/projects', {
-            method: 'GET',
-            haders: {
-                'Content-type': 'application/json'
-            },
-        }).then((resp) => resp.json())
-            .then((data) => {
-                setProjects(data)
-            })
-            .catch((err) => console.log(err))
+        setTimeout(() => {
+            fetch('http://localhost:5000/projects', {
+                method: 'GET',
+                haders: {
+                    'Content-type': 'application/json'
+                },
+            }).then((resp) => resp.json())
+                .then((data) => {
+                    setProjects(data)
+                    setRemoveLoading(true)
+                })
+                .catch((err) => console.log(err))
+        }, 300)
     }, [])
 
     return (
@@ -48,6 +51,7 @@ const Projects = () => {
                         <ProjectCard id={project.id} name={project.name} budget={project.budget} category={project.category.name} key={project.id}></ProjectCard>
                     ))
                 )}
+                {!removeLoading && <Loading></Loading>}
             </Container>
         </div>
     )
