@@ -28,7 +28,20 @@ const Project = () => {
     }, [id])
 
     function editPost(project) {
+        if (project.budget < project.cost) {
+            // message
+        }
 
+        fetch(`http://localhost:5000/project/${project.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(project),
+        }).then((resp) => resp.json())
+            .then((data) => {
+
+            }).catch((err) => console.log(err))
     }
 
     function toggleProjectForm() {
