@@ -56,6 +56,10 @@ const Project = () => {
             }).catch((err) => console.log(err))
     }
 
+    function createService() {
+
+    }
+
     function toggleProjectForm() {
         setShowProjectForm(!showProjectForm)
     }
@@ -92,7 +96,7 @@ const Project = () => {
 
                             <div className={styles.project_info}>
                                 {showServiceForm && (
-                                    <ServiceForm></ServiceForm>
+                                    <ServiceForm handleSubmit={createService} btnText='Adicionar serviço' projectData={project}></ServiceForm>
                                 )}
                             </div>
                         </div>
