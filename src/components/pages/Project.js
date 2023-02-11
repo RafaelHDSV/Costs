@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import Container from '../layout/Container'
+import Loading from '../layout/Loading'
 
 import styles from './Project.module.css'
 
@@ -7,22 +9,51 @@ const Project = () => {
 
     const { id } = useParams()
     const [project, setProject] = useState([])
+    const [showProjectForm, setShowProjectForm] = useState(false)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/projects/${id}`, {
-            method: 'GET',
-            headers: {
-                'Content-type': 'application/json'
-            },
-        }).then((resp) => resp.json())
-            .then((data) => {
-                setProject(data)
-            })
-            .catch((err) => console.log(err))
+        setTimeout(() => {
+            fetch(`http://localhost:5000/projects/${id}`, {
+                method: 'GET',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+            }).then((resp) => resp.json())
+                .then((data) => {
+                    setProject(data)
+                })
+                .catch((err) => console.log(err))
+        }, 300);
     }, [id])
 
+    function toggleProjectForm() {
+        setShowProjectForm(!showProjectForm)
+    }
+
     return (
-        <div>{project.name}</div>
+        <>
+            {project.name ? (
+                <div>
+                    <Container customClass='column'>
+                        <div>
+                            <h1>Projeto: {project.name}</h1>
+                            <button onClick={toggleProjectForm}>{!showProjectForm ? 'Editar Projeto' : 'Fechar'}</button>
+                            {!showProjectForm ? (
+                                <div>
+                                    <p><span>Categoria:</span>{project.category.name}</p>
+                                    <p><span>Total de Orçamento: </span> R${project.budget}</p>
+                                    <p><span>Total Utilizado: </span> R${project.cost}</p>
+                                </div>
+                            ) : (
+                                <div>
+                                    <p>detalhe projeto</p>
+                                </div>
+                            )}
+                        </div>
+                    </Container>
+                </div>
+            ) : <Loading></Loading>}
+        </>
     )
 }
 

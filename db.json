@@ -43,6 +43,17 @@
       "cost": 0,
       "services": [],
       "id": 4
+    },
+    {
+      "name": "Costs",
+      "budget": "1564",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 5
     }
   ],
   "categories": [
