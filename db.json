@@ -7,8 +7,33 @@
         "id": "2",
         "name": "Desenvolvimento"
       },
-      "cost": 0,
-      "services": [],
+      "cost": 423,
+      "services": [
+        {
+          "name": "a",
+          "cost": "100",
+          "description": "b",
+          "id": "2e4b8969-528f-4d15-9d13-5a532d9e040c"
+        },
+        {
+          "name": "a",
+          "cost": "100",
+          "description": "b",
+          "id": "2e4b8969-528f-4d15-9d13-5a532d9e040c"
+        },
+        {
+          "name": "a",
+          "cost": "100",
+          "description": "b",
+          "id": "2e4b8969-528f-4d15-9d13-5a532d9e040c"
+        },
+        {
+          "name": "b",
+          "cost": "123",
+          "description": "dwadeaf",
+          "id": "5fea77d4-9224-44fa-97c9-0838951b2955"
+        }
+      ],
       "id": 1
     },
     {
