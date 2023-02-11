@@ -12,6 +12,7 @@ const Projects = () => {
 
     const [projects, setProjects] = useState([])
     const [removeLoading, setRemoveLoading] = useState(false)
+    const [projectMessage, setProjectMessage] = useState('')
 
     const location = useLocation()
     let message = ''
@@ -45,7 +46,7 @@ const Projects = () => {
         }).then((resp) => resp.json())
             .then((data) => {
                 setProjects(projects.filter((project) => project.id !== id))
-                //message
+                setProjectMessage('Projeto removido com sucesso!')
             })
             .catch((err) => console.log(err))
     }
@@ -58,6 +59,7 @@ const Projects = () => {
             </div>
 
             {message && <Message type='sucess' msg={message}></Message>}
+            {projectMessage && <Message type='sucess' msg={projectMessage}></Message>}
 
             <Container customClass='start'>
                 {projects.length > 0 && (
