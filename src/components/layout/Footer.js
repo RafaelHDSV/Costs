@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'
+import { VisitCountFooter } from '@vieira/analytics/react'
 
 import styles from './Footer.module.css'
 
@@ -13,6 +14,9 @@ const Footer = () => {
             </ul>
 
             <p className={styles.copy_right}><span>Costs</span> &copy; 2023</p>
+            <div style={{ marginTop: '0.5rem', opacity: 0.85 }}>
+              <VisitCountFooter projectKey="costs" />
+            </div>
         </footer>
     )
 }
